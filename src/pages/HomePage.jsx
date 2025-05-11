@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { fetchBooks } from '../api/bookApi';
 import styled from 'styled-components';
 import { generatePastelFromTheme } from '../theme/util';
@@ -77,7 +77,7 @@ const ShelfBox = styled.div.attrs(()=>({
   grid-auto-flow: column;
   align-items: end;
   justify-content: start;
-  gap: 16px;
+  gap: 10px;
   min-height: 160px;
   z-index: 1;
 
@@ -94,7 +94,7 @@ const ShelfBox = styled.div.attrs(()=>({
 
   @media (max-width: 480px) {
     max-width: 90%;
-    gap: 12px;
+    gap: 8px;
     padding: 25px 16px 0;
   }
 `;
@@ -154,6 +154,7 @@ const Book = styled.div.attrs(()=>({
     width: 100%;
     background-color: ${({ theme }) => theme.palette.primary.main};
      box-shadow: inset -2px 0 4px rgba(0, 0, 0, 0.3);
+     border: 1px solid ${({ theme }) => theme.palette.primary.main};
     display: ${({ decoration }) =>
       decoration === 'bottom' || decoration === 'both' ? 'block' : 'none'};
   }
@@ -187,7 +188,7 @@ function generateBookSize() {
 }
 
 function getSelectiveTilt() {
-  const tilt = (Math.random() * 8 + 2) * (Math.random() < 0.5 ? -1 : 1);
+  const tilt = (Math.random() * 8 + 4) * (Math.random() < 0.5 ? -1 : 1);
   return Math.round(tilt);
 }
 

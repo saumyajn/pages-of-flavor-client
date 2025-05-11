@@ -47,6 +47,6 @@ export function generatePastelFromTheme(baseColors) {
 
   const { h } = hexToHSL(randomHex);
   const s = Math.floor(Math.random() * 15) + 20;
-  const l = Math.floor(Math.random() * 10) + 65;
+  const l = Math.floor(Math.random() * 10) + 55;
   return `hsl(${h}, ${s}%, ${l}%)`;
 }
